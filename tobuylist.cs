@@ -10,10 +10,10 @@ int totalCost = 0;
 
 for(int i = 0 ; i < prices.Count; i++)
 {
-    System.Console.WriteLine($"{i+1}. {articles[i]} \t\t {prices[i]} kr");
+    System.Console.WriteLine($"{i+1}. {articles[i], -15} {prices[i],5} kr"); //Added width paragraphs. -15 means take 15 slots
 }
 foreach (int p in prices)
 {
     totalCost += p;
 }
-System.Console.WriteLine($"Totalt:\t\t{totalCost} kr");
+System.Console.WriteLine($"{"Totalt:",-12}{totalCost, 12} kr");
