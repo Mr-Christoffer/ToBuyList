@@ -1,11 +1,11 @@
 List<string> articles =new List<string>();
 List<int> prices = new List<int>();
-articles.Add("Mjölk");
+/*articles.Add("Mjölk");
 articles.Add("Bröd");
 articles.Add("Ost");
 prices.Add(15);
 prices.Add(32);
-prices.Add(89);
+prices.Add(89);*/
 bool programRun = true;
 
 while (programRun)
@@ -13,7 +13,7 @@ while (programRun)
     Console.Clear();
     for(int i = 0 ; i < prices.Count; i++)
 {
-    System.Console.WriteLine($"{i+1}. {articles[i], -15} {prices[i],5} kr"); //Added width paragraphs. -15 means take 15 slots and adjust to left.
+    System.Console.WriteLine($"{i+1}. {articles[i], -15} {prices[i],5} kr"); //Added width paragraphs. -15 means take 15 slots and adjust to left. 5 means it take up 5 slots but adjust to the right
 }
 int totalCost = 0;
 foreach (int p in prices)
@@ -36,6 +36,8 @@ if (int.TryParse(input, out int number)) //If its a int-number
         else
         {
             System.Console.WriteLine("Det artikelnumret finns inte!");
+            System.Console.WriteLine("Tryck valfri knapp för att fortsätta!");
+            Console.ReadKey();
         }
     }
 else
@@ -49,10 +51,15 @@ else
                 articles.Add(input);
                 prices.Add(price);
             }
-            //int price = int.TryParse(Console.ReadLine());
             
-
         }
+        else
+        {
+            System.Console.WriteLine("Maximalt 15 tecken är tillåtna för artiklar!");
+            System.Console.WriteLine("Tryck valfri knapp för att fortsätta!");
+            Console.ReadKey();
+        }
+
     }
 
 }
