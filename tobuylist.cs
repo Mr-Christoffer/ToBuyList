@@ -10,6 +10,7 @@ bool programRun = true;
 
 while (programRun)
 {
+    Console.Clear();
     for(int i = 0 ; i < prices.Count; i++)
 {
     System.Console.WriteLine($"{i+1}. {articles[i], -15} {prices[i],5} kr"); //Added width paragraphs. -15 means take 15 slots and adjust to left.
@@ -35,6 +36,22 @@ if (int.TryParse(input, out int number)) //If its a int-number
         else
         {
             System.Console.WriteLine("Det artikelnumret finns inte!");
+        }
+    }
+else
+    {
+        if(input.Length <= 15) // Checks length of input so it doesnt go over the 15 slots maximum length (otherwise list would not look good)
+        {
+            System.Console.WriteLine("Ange priset för " + (input));
+            string? priceInput = Console.ReadLine();
+            if(int.TryParse(priceInput, out int price))
+            {
+                articles.Add(input);
+                prices.Add(price);
+            }
+            //int price = int.TryParse(Console.ReadLine());
+            
+
         }
     }
 
